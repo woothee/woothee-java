@@ -39,97 +39,97 @@ public final class TestIsCrawler {
 
   @Test
   public void testsetCrawler() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/crawler.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/crawler.yaml"));
     executeCheckIsCrawler(target, "Crawler", true);
   }
 
   @Test
   public void testsetCrawlerGoogle() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/crawler_google.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/crawler_google.yaml"));
     executeCheckIsCrawler(target, "Crawler/Google", true);
   }
 
   @Test
   public void testsetPCWindows() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/pc_windows.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/pc_windows.yaml"));
     executeCheckIsCrawler(target, "PC/Windows", false);
   }
 
   @Test
   public void testsetPCMisc() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/pc_misc.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/pc_misc.yaml"));
     executeCheckIsCrawler(target, "PC/Misc", false);
   }
 
   @Test
   public void testsetMobilePhoneDocomo() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/mobilephone_docomo.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/mobilephone_docomo.yaml"));
     executeCheckIsCrawler(target, "MobilePhone/docomo", false);
   }
 
   @Test
   public void testsetMobilePhoneAU() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/mobilephone_au.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/mobilephone_au.yaml"));
     executeCheckIsCrawler(target, "MobilePhone/au", false);
   }
 
   @Test
   public void testsetMobilePhoneSoftbank() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/mobilephone_softbank.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/mobilephone_softbank.yaml"));
     executeCheckIsCrawler(target, "MobilePhone/softbank", false);
   }
 
   @Test
   public void testsetMobilePhoneWillcom() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/mobilephone_willcom.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/mobilephone_willcom.yaml"));
     executeCheckIsCrawler(target, "MobilePhone/willcom", false);
   }
 
   @Test
   public void testsetMobilePhoneMisc() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/mobilephone_misc.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/mobilephone_misc.yaml"));
     executeCheckIsCrawler(target, "MobilePhone/misc", false);
   }
 
   @Test
   public void testsetSmartPhoneIOS() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/smartphone_ios.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/smartphone_ios.yaml"));
     executeCheckIsCrawler(target, "SmartPhone/ios", false);
   }
 
   @Test
   public void testsetSmartPhoneAndroid() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/smartphone_android.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/smartphone_android.yaml"));
     executeCheckIsCrawler(target, "SmartPhone/android", false);
   }
 
   @Test
   public void testsetSmartPhoneMisc() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/smartphone_misc.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/smartphone_misc.yaml"));
     executeCheckIsCrawler(target, "SmartPhone/misc", false);
   }
 
   @Test
   public void testsetAppliance() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/appliance.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/appliance.yaml"));
     executeCheckIsCrawler(target, "Appliance", false);
   }
 
   @Test
   public void testsetPCLowPriority() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/pc_lowpriority.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/pc_lowpriority.yaml"));
     executeCheckIsCrawler(target, "PC/LowPriority", false);
   }
 
   @Test
   public void testsetMisc() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/misc.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/misc.yaml"));
     executeCheckIsCrawler(target, "Misc", false);
   }
 
   @Test
   public void testsetCrawlerNonMajor() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/crawler_nonmajor.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/crawler_nonmajor.yaml"));
     executeCheckIsCrawler(target, "Crawler/NonMajor", false);
   }
 }

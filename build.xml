@@ -12,22 +12,17 @@
   <property name="dir.build.testresults" value="testresults" />
   <property name="jar.name" value="woothee.jar" />
 
-  <target name="all" depends="clean,init,checkyaml,codegen,hiveudf,jar" />
+  <target name="all" depends="clean,init,codegen,hiveudf,jar" />
 
   <!-- Initialize -->
   <target name="init">
     <mkdir dir="${classes}" />
   </target>
 
-  <target name="checkyaml">
-    <exec executable="perl">
-      <arg line="../bin/dataset_checker.pl" />
-      <env key="LC_ALL" value="C" />
-    </exec>
-  </target>
+  <!-- TODO: Check whether this works on TravisCI or not. -->
   <target name="codegen">
     <exec executable="perl">
-      <arg line="../bin/dataset_yaml2java.pl" />
+      <arg line="scripts/dataset_yaml2java.pl" />
       <env key="LC_ALL" value="C" />
     </exec>
   </target>
@@ -83,7 +78,7 @@
     <javadoc sourcepath="${source}" packagenames="${PACKAGE}" destdir="${javadoc}" />
   </target>
 
-  <target name="test" depends="init,checkyaml,codegen,compile,runtests" />
+  <target name="test" depends="init,codegen,compile,runtests" />
 
   <target name="runtests">
     <mkdir dir="${dir.build.testresults}" />

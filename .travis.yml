@@ -1,0 +1,8 @@
+language: java
+jdk:
+  - oraclejdk7
+  - oraclejdk6
+  - openjdk7
+  - openjdk6
+before_script:
+  - git submodule update --init

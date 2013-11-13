@@ -43,97 +43,97 @@ public final class TestParseUserAgent {
 
   @Test
   public void testsetCrawler() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/crawler.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/crawler.yaml"));
     executeTestSet(target, "Crawler");
   }
 
   @Test
   public void testsetCrawlerGoogle() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/crawler_google.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/crawler_google.yaml"));
     executeTestSet(target, "Crawler/Google");
   }
 
   @Test
   public void testsetPCWindows() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/pc_windows.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/pc_windows.yaml"));
     executeTestSet(target, "PC/Windows");
   }
 
   @Test
   public void testsetPCMisc() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/pc_misc.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/pc_misc.yaml"));
     executeTestSet(target, "PC/Misc");
   }
 
   @Test
   public void testsetMobilePhoneDocomo() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/mobilephone_docomo.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/mobilephone_docomo.yaml"));
     executeTestSet(target, "MobilePhone/docomo");
   }
 
   @Test
   public void testsetMobilePhoneAU() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/mobilephone_au.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/mobilephone_au.yaml"));
     executeTestSet(target, "MobilePhone/au");
   }
 
   @Test
   public void testsetMobilePhoneSoftbank() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/mobilephone_softbank.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/mobilephone_softbank.yaml"));
     executeTestSet(target, "MobilePhone/softbank");
   }
 
   @Test
   public void testsetMobilePhoneWillcom() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/mobilephone_willcom.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/mobilephone_willcom.yaml"));
     executeTestSet(target, "MobilePhone/willcom");
   }
 
   @Test
   public void testsetMobilePhoneMisc() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/mobilephone_misc.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/mobilephone_misc.yaml"));
     executeTestSet(target, "MobilePhone/misc");
   }
 
   @Test
   public void testsetSmartPhoneIOS() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/smartphone_ios.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/smartphone_ios.yaml"));
     executeTestSet(target, "SmartPhone/ios");
   }
 
   @Test
   public void testsetSmartPhoneAndroid() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/smartphone_android.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/smartphone_android.yaml"));
     executeTestSet(target, "SmartPhone/android");
   }
 
   @Test
   public void testsetSmartPhoneMisc() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/smartphone_misc.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/smartphone_misc.yaml"));
     executeTestSet(target, "SmartPhone/misc");
   }
 
   @Test
   public void testsetAppliance() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/appliance.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/appliance.yaml"));
     executeTestSet(target, "Appliance");
   }
 
   @Test
   public void testsetPCLowPriority() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/pc_lowpriority.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/pc_lowpriority.yaml"));
     executeTestSet(target, "PC/LowPriority");
   }
 
   @Test
   public void testsetMisc() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/misc.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/misc.yaml"));
     executeTestSet(target, "Misc");
   }
 
   @Test
   public void testsetCrawlerNonMajor() throws FileNotFoundException {
-    File target = new File(new File(".").getAbsolutePath().concat("/../testsets/crawler_nonmajor.yaml"));
+    File target = new File(new File(".").getAbsolutePath().concat("/../woothee/testsets/crawler_nonmajor.yaml"));
     executeTestSet(target, "Crawler/NonMajor");
   }
 }
