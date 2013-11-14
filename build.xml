@@ -52,10 +52,10 @@
            encoding="UTF-8">
       <classpath>
         <pathelement path="${classpath}" />
-        <fileset dir="${user.home}/tmp/hadoop-1.2.1">
+        <fileset dir="${hadoop_path}">
           <include name="**/*.jar" />
         </fileset>
-        <fileset dir="${user.home}/tmp/hive-0.10.0/lib/">
+        <fileset dir="${hive_path}">
           <include name="**/*.jar" />
         </fileset>
         <fileset dir="lib">
