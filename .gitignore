@@ -3,4 +3,4 @@ classes/
 testresults/
 # src/java/is/tagomor/woothee/DataSet.java is generated at "ant codegen"
 src/java/is/tagomor/woothee/DataSet.java
-woothee.jar
+./woothee.jar
