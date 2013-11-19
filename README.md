@@ -6,9 +6,9 @@ https://github.com/woothee/woothee
 
 ## Installation
 
-Download 'woothee.jar' and put it into CLASSPATH directory.
+Download 'release/woothee.jar' and put it into CLASSPATH directory.
 
-**WARN** Pre-built 'woothee.jar' doesn't include Hive UDF classfiles. See 'Build your own woothee.jar' for your own jarfile with specified Hadoop/Hive versions.
+**NOTICE** Pre-built jar doesn't include Hive UDFs. Build your own jar file if you want these. (See 'Build your own woothee.jar'.)
 
 ## Usage
 
@@ -90,9 +90,9 @@ FROM (
 WHERE NOT is_crawler(parsed_agent) AND NOT is_unknown(parsed_agent)
 ```
 
-## Build your own woothee.jar
+## Build your own woothee.jar with Hive UDFs
 
-1. Install JDK and Ant
+1. Install git, JDK and Ant
 2. Download same version tarballs of Hadoop and Hive, and extract these onto your disk
 3. Do `ant hiveudf` with two `-D` options for `hadoop_path` and `hive_path`
  * `ant -Dhadoop_path=/home/myname/tmp/hadoop-myversion -Dhive_path=/home/myname/tmp/hive-myversion hiveudf`

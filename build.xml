@@ -51,7 +51,15 @@
     </exec>
   </target>
 
-  <target name="codegen" depends="generator,gen_timestamp,gen_username" unless="woothee.dataset.exists">
+  <target name="getwoothee">
+    <exec executable="git">
+      <arg value="submodule" />
+      <arg value="update" />
+      <arg value="--init" />
+    </exec>
+  </target>
+
+  <target name="codegen" depends="init,getwoothee,generator,gen_timestamp,gen_username" unless="woothee.dataset.exists">
     <java classname="is.tagomor.woothee.DataSetGenerator">
       <arg value="${woothee.codegen.timestamp}" />
       <arg value="${woothee.codegen.username}" />
