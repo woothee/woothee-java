@@ -19,16 +19,54 @@
     <mkdir dir="${classes}" />
   </target>
 
-  <!-- TODO: Check whether this works on TravisCI or not. -->
-  <target name="codegen">
-    <exec executable="perl">
-      <arg line="scripts/dataset_yaml2java.pl" />
-      <env key="LC_ALL" value="C" />
+  <target name="gencheck">
+    <available file="src/java/is/tagomor/woothee/DataSet.java" property="woothee.dataset.exists" />
+  </target>
+
+  <!-- compile code generator -->
+  <target name="generator">
+    <javac srcdir="${source}" destdir="${classes}"
+           debug="on" optimize="off" deprecation="off"
+           includeantruntime="false"
+           encoding="UTF-8">
+      <include name="**/is/tagomor/woothee/DataSetGenerator.java" />
+      <classpath>
+        <pathelement path="${classpath}" />
+        <fileset dir="lib">
+          <include name="**/*.jar" />
+        </fileset>
+        <pathelement location="${classes}" />
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="gen_timestamp">
+    <exec executable="date" outputproperty="woothee.codegen.timestamp">
+      <env key="LC_ALL" value="C"/>
+    </exec>
+  </target>
+  <target name="gen_username">
+    <exec executable="whoami" outputproperty="woothee.codegen.username">
+      <env key="LC_ALL" value="C"/>
     </exec>
   </target>
 
+  <target name="codegen" depends="generator,gen_timestamp,gen_username" unless="woothee.dataset.exists">
+    <java classname="is.tagomor.woothee.DataSetGenerator">
+      <arg value="${woothee.codegen.timestamp}" />
+      <arg value="${woothee.codegen.username}" />
+      <classpath>
+        <pathelement path="${classpath}" />
+        <fileset dir="lib">
+          <include name="**/*.jar" />
+        </fileset>
+        <pathelement location="${classes}" />
+      </classpath>
+    </java>
+  </target>
+
   <!-- compile java sources -->
-  <target name="compile">
+  <target name="compile" depends="codegen">
     <javac srcdir="${source}" destdir="${classes}"
            debug="on" optimize="off" deprecation="off"
            includeantruntime="false"
