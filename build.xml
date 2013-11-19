@@ -116,7 +116,6 @@
     <jar jarfile="${jar.name}" basedir="${classes}" />
   </target>
 
-
   <!-- make javadoc -->
   <target name="javadoc">
     <delete dir="${javadoc}" />
@@ -137,7 +136,7 @@
            includeantruntime="true"
            showoutput="true"
            printsummary="true">
-      <sysproperty key="testset.dirname" value="../testsets" />
+      <sysproperty key="testset.dirname" value="${basedir}/woothee/testsets" />
       <classpath>
         <pathelement path="${classpath}" />
         <fileset dir="lib">
