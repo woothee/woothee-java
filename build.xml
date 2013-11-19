@@ -83,7 +83,7 @@
   </target>
 
   <!-- compile hive udf with hadoop/hive jars -->
-  <target name="hiveudf">
+  <target name="hiveudf" depends="init,compile">
     <javac srcdir="${source}" destdir="${classes}"
            debug="on" optimize="off" deprecation="off"
            includeantruntime="false"
@@ -104,7 +104,7 @@
     </javac>
   </target>
 
-  <target name="jar" depends="compile">
+  <target name="jar" depends="init,compile">
     <jar jarfile="${jar.name}" basedir="${classes}" />
   </target>
 
@@ -152,6 +152,7 @@
   <!-- clean work file -->
   <target name="clean">
     <delete dir="${classes}" />
+    <delete file="src/java/is/tagomor/woothee/DataSet.java" />
     <delete file="${jar.name}" />
   </target>
 </project>
