@@ -17,6 +17,18 @@ public class Windows extends AgentCategory {
     if (pos < 0)
       return false;
 
+    // Xbox Series
+    if (ua.indexOf("Xbox") > -1) {
+      Map<String,String> d;
+      if (ua.indexOf("Xbox; Xbox One)") > -1)
+        d = DataSet.get("XboxOne");
+      else
+        d = DataSet.get("Xbox360");
+      // overwrite browser detections as appliance
+      updateMap(result, d);
+      return true;
+    }
+
     Map<String,String> data = DataSet.get("Win");
 
     Matcher win = windowsVer.matcher(ua);

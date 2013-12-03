@@ -21,6 +21,9 @@ public class Playstation extends AgentCategory {
     else if (ua.indexOf("PLAYSTATION 3 ") > -1 || ua.indexOf("PLAYSTATION 3;") > -1) {
       data = DataSet.get("PS3");
     }
+    else if (ua.indexOf("PlayStation 4 ") > -1) {
+      data = DataSet.get("PS4");
+    }
 
     if (data == null)
       return false;
