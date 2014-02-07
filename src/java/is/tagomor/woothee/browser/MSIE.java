@@ -10,7 +10,7 @@ import is.tagomor.woothee.DataSet;
 
 public class MSIE extends AgentCategory {
   private static Pattern msie = Pattern.compile("MSIE ([.0-9]+);");
-  private static Pattern trident = Pattern.compile("Trident/([.0-9]+); rv ([.0-9]+)");
+  private static Pattern trident = Pattern.compile("Trident/([.0-9]+); rv:([.0-9]+)");
 
   public static boolean challenge(final String ua, final Map<String,String> result) {
     if (ua.indexOf("compatible; MSIE") >= 0 || ua.indexOf("Trident/") >= 0) {
