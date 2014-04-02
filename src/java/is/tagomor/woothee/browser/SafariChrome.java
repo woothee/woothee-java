@@ -10,6 +10,7 @@ import is.tagomor.woothee.DataSet;
 
 public class SafariChrome extends AgentCategory {
   private static Pattern chromeVerRegex = Pattern.compile("(?:Chrome|CrMo|CriOS)/([.0-9]+)");
+  private static Pattern operaVerRegex = Pattern.compile("OPR/([.0-9]+)");
   private static Pattern safariVerRegex = Pattern.compile("Version/([.0-9]+)");
 
   public static boolean challenge(final String ua, final Map<String,String> result) {
@@ -25,6 +26,17 @@ public class SafariChrome extends AgentCategory {
     if (cpos < 0)
       cpos = ua.indexOf("CriOS");
     if (cpos > -1) {
+      int opos = ua.indexOf("OPR");
+      if (opos > -1) {
+        Matcher opera = operaVerRegex.matcher(ua);
+        if (opera.find(opos)) {
+          version = opera.group(1);
+          updateMap(result, DataSet.get("Opera"));
+          updateVersion(result, version);
+          return true;
+        }
+      }
+
       // Chrome
       Matcher chrome = chromeVerRegex.matcher(ua);
       if (chrome.find(cpos))

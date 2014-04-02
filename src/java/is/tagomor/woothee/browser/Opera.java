@@ -13,6 +13,7 @@ public class Opera extends AgentCategory {
   private static Pattern operaVerRegex2 = Pattern.compile("Opera[/ ]([.0-9]+)");
 
   public static boolean challenge(final String ua, final Map<String,String> result) {
+    // See SafariChrome.java for new Opera (w/ blink)
     int pos = ua.indexOf("Opera");
     if (pos < 0) // not Opera
       return false;
