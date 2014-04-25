@@ -22,7 +22,7 @@ public class OSX extends AgentCategory {
         data = DataSet.get("iPhone");
       else if (ua.indexOf("iPad;") > -1)
         data = DataSet.get("iPad");
-      else if (ua.indexOf("iPod;") > -1)
+      else if (ua.indexOf("iPod") > -1)
         data = DataSet.get("iPod");
     }
 
