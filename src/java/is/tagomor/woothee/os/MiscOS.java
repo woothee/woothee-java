@@ -22,6 +22,9 @@ public class MiscOS extends AgentCategory {
     else if (ua.indexOf("X11; FreeBSD ") > -1) {
       data = DataSet.get("BSD");
     }
+    else if (ua.indexOf("X11; CrOS ") > -1) {
+      data = DataSet.get("ChromeOS");
+    }
 
     if (data != null) {
       updateCategory(result, data.get(DataSet.DATASET_KEY_CATEGORY));
