@@ -9,7 +9,7 @@ import is.tagomor.woothee.AgentCategory;
 import is.tagomor.woothee.DataSet;
 
 public class SmartPhone extends AgentCategory {
-  public static Pattern firefoxOsPattern = Pattern.compile("^Mozilla/[.0-9]+ \\(Mobile;(.*;)? rv:[.0-9]+\\) Gecko/[.0-9]+ Firefox/[.0-9]+$");
+  public static Pattern firefoxOsPattern = Pattern.compile("^Mozilla/[.0-9]+ \\((Mobile|Tablet);(.*;)? rv:[.0-9]+\\) Gecko/[.0-9]+ Firefox/[.0-9]+$");
 
   public static boolean challenge(final String ua, final Map<String,String> result) {
     
@@ -31,6 +31,7 @@ public class SmartPhone extends AgentCategory {
     if (result.containsKey(DataSet.DATASET_KEY_NAME) && result.get(DataSet.DATASET_KEY_NAME) == DataSet.get("Firefox").get(DataSet.DATASET_KEY_NAME)) {
       // Firefox OS specific pattern
       // http://lawrencemandel.com/2012/07/27/decision-made-firefox-os-user-agent-string/
+      // https://github.com/woothee/woothee/issues/2
       Matcher firefoxOs = firefoxOsPattern.matcher(ua);
       if (firefoxOs.find()) {
         data = DataSet.get("FirefoxOS");
