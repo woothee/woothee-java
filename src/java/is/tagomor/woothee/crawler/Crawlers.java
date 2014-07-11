@@ -23,6 +23,11 @@ public class Crawlers extends AgentCategory {
         updateMap(result, DataSet.get("YahooJP"));
         return true;
       }
+      else if (ua.indexOf("Y!J-BRZ/YATSHA crawler") > -1 ||
+               ua.indexOf("Y!J-BRY/YATSH crawler") > -1) {
+        updateMap(result, DataSet.get("YahooJP"));
+        return true;
+      }
       else if (ua.indexOf("Yahoo Pipes") > -1) {
         updateMap(result, DataSet.get("YahooPipes"));
         return true;
