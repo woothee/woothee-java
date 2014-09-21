@@ -50,7 +50,7 @@ public class Windows extends AgentCategory {
       data = DataSet.get("WinVista");
     else if (versionString.equals("NT 5.1"))
       data = DataSet.get("WinXP");
-    else if (versionString.startsWith("Phone OS"))
+    else if (versionString.startsWith("Phone")) // "Phone OS" or "Phone 8.1", ...
       data = DataSet.get("WinPhone");
     else if (versionString.equals("NT 5.0"))
       data = DataSet.get("Win2000");
