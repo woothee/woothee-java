@@ -23,6 +23,6 @@ public final class TestDataSet {
   @Test
     public void testDataSet() {
     assertEquals("CATEGORY LIST SIZE", 7, DataSet.CATEGORY_LIST.length); // pc,smartphone,mobilephone,crawler,appliance,misc,unknown
-    assertEquals("ATTRIBUTE LIST SIZE", 5, DataSet.ATTRIBUTE_LIST.length); // name category os vendor version
+    assertEquals("ATTRIBUTE LIST SIZE", 6, DataSet.ATTRIBUTE_LIST.length); // name category os vendor version os_version
   }
 }
