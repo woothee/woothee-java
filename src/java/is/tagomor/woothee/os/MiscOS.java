@@ -11,6 +11,8 @@ import is.tagomor.woothee.Classifier;
 
 public class MiscOS extends AgentCategory {
   private static Pattern mac_ppc = Pattern.compile("rv:(\\d+\\.\\d+\\.\\d+)");
+  private static Pattern freebsd = Pattern.compile("FreeBSD ([^;\\)]+);");
+  private static Pattern chromeOs = Pattern.compile("CrOS ([^\\)]+)\\)");
 
   public static boolean challenge(final String ua, final Map<String,String> result) {
     Map<String,String> data = null;
@@ -29,9 +31,17 @@ public class MiscOS extends AgentCategory {
     }
     else if (ua.indexOf("X11; FreeBSD ") > -1) {
       data = DataSet.get("BSD");
+      Matcher bsd = freebsd.matcher(ua);
+      if (bsd.find()) {
+        osVersion = bsd.group(1);
+      }
     }
     else if (ua.indexOf("X11; CrOS ") > -1) {
       data = DataSet.get("ChromeOS");
+      Matcher cros = chromeOs.matcher(ua);
+      if (cros.find()) {
+        osVersion = cros.group(1);
+      }
     }
 
     if (data != null) {
