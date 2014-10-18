@@ -34,6 +34,8 @@ public final class TestParseUserAgent {
       assertEquals(message(setName, target, "category"), t.get("category"), r.get("category"));
       if (t.get("os") != null)
         assertEquals(message(setName, target, "os"), t.get("os"), r.get("os"));
+      if (t.get("os_version") != null)
+        assertEquals(message(setName, target, "os_version"), t.get("os_version"), r.get("os_version"));
       if (t.get("version") != null)
         assertEquals(message(setName, target, "version"), t.get("version"), r.get("version"));
       if (t.get("vendor") != null)
