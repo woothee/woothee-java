@@ -9,6 +9,7 @@ public final class DataSet {
   public static final String DATASET_KEY_TYPE = "type";
   public static final String DATASET_KEY_CATEGORY = "category";
   public static final String DATASET_KEY_OS = "os";
+  public static final String DATASET_KEY_OS_VERSION = "os_version";
   public static final String DATASET_KEY_VENDOR = "vendor";
   public static final String DATASET_KEY_VERSION = "version";
 
@@ -26,6 +27,7 @@ public final class DataSet {
   public static final String ATTRIBUTE_NAME = "name";
   public static final String ATTRIBUTE_CATEGORY = "category";
   public static final String ATTRIBUTE_OS = "os";
+  public static final String ATTRIBUTE_OS_VERSION = "os_version";
   public static final String ATTRIBUTE_VENDOR = "vendor";
   public static final String ATTRIBUTE_VERSION = "version";
   public static final String VALUE_UNKNOWN = "UNKNOWN";
@@ -35,7 +37,7 @@ public final class DataSet {
     DATASET_CATEGORY_CRAWLER, DATASET_CATEGORY_APPLIANCE, DATASET_CATEGORY_MISC, VALUE_UNKNOWN
   };
   public static final String[] ATTRIBUTE_LIST = {
-    ATTRIBUTE_NAME, ATTRIBUTE_CATEGORY, ATTRIBUTE_OS, ATTRIBUTE_VENDOR, ATTRIBUTE_VERSION
+    ATTRIBUTE_NAME, ATTRIBUTE_CATEGORY, ATTRIBUTE_OS, ATTRIBUTE_OS_VERSION, ATTRIBUTE_VENDOR, ATTRIBUTE_VERSION
   };
 
   private static final Map<String,Map<String,String>> DATASET = new HashMap<String,Map<String,String>>();
