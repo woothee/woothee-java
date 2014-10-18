@@ -10,12 +10,15 @@ import is.tagomor.woothee.DataSet;
 import is.tagomor.woothee.Classifier;
 
 public class OSX extends AgentCategory {
+  private static Pattern osxVer = Pattern.compile("Mac OS X (10[._]\\d+(?:[._]\\d+)?)(?:\\)|;)");
+
   public static boolean challenge(final String ua, final Map<String,String> result) {
     int pos = ua.indexOf("Mac OS X");
     if (pos < 0) // not OSX
       return false;
 
     Map<String,String> data = DataSet.get("OSX");
+    String version = null;
 
     if (ua.indexOf("like Mac OS X") > -1) {
       if (ua.indexOf("iPhone;") > -1)
@@ -24,10 +27,19 @@ public class OSX extends AgentCategory {
         data = DataSet.get("iPad");
       else if (ua.indexOf("iPod") > -1)
         data = DataSet.get("iPod");
+    } else {
+      Matcher osx = osxVer.matcher(ua);
+      if (osx.find(pos)) {
+        version = osx.group(1).replace('_', '.');
+      }
+
     }
 
     updateCategory(result, data.get(DataSet.DATASET_KEY_CATEGORY));
     updateOs(result, data.get(DataSet.DATASET_KEY_NAME));
+    if (version != null) {
+      updateOsVersion(result, version);
+    }
     return true;
   }
 }

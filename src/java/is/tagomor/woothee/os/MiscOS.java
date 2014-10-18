@@ -10,6 +10,8 @@ import is.tagomor.woothee.DataSet;
 import is.tagomor.woothee.Classifier;
 
 public class MiscOS extends AgentCategory {
+  private static Pattern mac_ppc = Pattern.compile("rv:(\\d+\\.\\d+\\.\\d+)");
+
   public static boolean challenge(final String ua, final Map<String,String> result) {
     Map<String,String> data = null;
     String osVersion = null;
@@ -20,6 +22,10 @@ public class MiscOS extends AgentCategory {
     }
     else if (ua.indexOf("Macintosh; U; PPC;") > -1 || ua.indexOf("Mac_PowerPC") > -1) {
       data = DataSet.get("MacOS");
+      Matcher ppc = mac_ppc.matcher(ua);
+      if (ppc.find()) {
+        osVersion = ppc.group(1);
+      }
     }
     else if (ua.indexOf("X11; FreeBSD ") > -1) {
       data = DataSet.get("BSD");
