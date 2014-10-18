@@ -67,6 +67,7 @@ public class Windows extends AgentCategory {
 
     updateCategory(result, data.get(DataSet.DATASET_KEY_CATEGORY));
     updateOs(result, data.get(DataSet.DATASET_KEY_NAME));
+    updateOsVersion(result, versionString);
     return true;
   }
 }

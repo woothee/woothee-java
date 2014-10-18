@@ -12,9 +12,11 @@ import is.tagomor.woothee.Classifier;
 public class MiscOS extends AgentCategory {
   public static boolean challenge(final String ua, final Map<String,String> result) {
     Map<String,String> data = null;
+    String osVersion = null;
 
     if (ua.indexOf("(Win98;") > -1) {
       data = DataSet.get("Win98");
+      osVersion = "98";
     }
     else if (ua.indexOf("Macintosh; U; PPC;") > -1 || ua.indexOf("Mac_PowerPC") > -1) {
       data = DataSet.get("MacOS");
@@ -29,6 +31,9 @@ public class MiscOS extends AgentCategory {
     if (data != null) {
       updateCategory(result, data.get(DataSet.DATASET_KEY_CATEGORY));
       updateOs(result, data.get(DataSet.DATASET_KEY_NAME));
+      if (osVersion != null) {
+        updateOsVersion(result, osVersion);
+      }
       return true;
     }
 
