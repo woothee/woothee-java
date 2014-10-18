@@ -11,6 +11,7 @@ import is.tagomor.woothee.Classifier;
 
 public class Windows extends AgentCategory {
   private static Pattern windowsVer = Pattern.compile("Windows ([ .a-zA-Z0-9]+)[;\\)]");
+  private static Pattern windowsPhoneOsVer = Pattern.compile("Phone(?: OS)? ([.0-9]+)");
 
   public static boolean challenge(final String ua, final Map<String,String> result) {
     int pos = ua.indexOf("Windows");
@@ -50,8 +51,13 @@ public class Windows extends AgentCategory {
       data = DataSet.get("WinVista");
     else if (versionString.equals("NT 5.1"))
       data = DataSet.get("WinXP");
-    else if (versionString.startsWith("Phone")) // "Phone OS" or "Phone 8.1", ...
+    else if (versionString.startsWith("Phone")) { // "Phone OS" or "Phone 8.1", ...
       data = DataSet.get("WinPhone");
+      Matcher phoneOs = windowsPhoneOsVer.matcher(ua);
+      if (phoneOs.find()) {
+        versionString = phoneOs.group(1);
+      }
+    }
     else if (versionString.equals("NT 5.0"))
       data = DataSet.get("Win2000");
     else if (versionString.equals("NT 4.0"))

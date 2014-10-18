@@ -9,11 +9,13 @@ import is.tagomor.woothee.AgentCategory;
 import is.tagomor.woothee.DataSet;
 
 public class SmartPhone extends AgentCategory {
-  public static Pattern firefoxOsPattern = Pattern.compile("^Mozilla/[.0-9]+ \\((Mobile|Tablet);(.*;)? rv:[.0-9]+\\) Gecko/[.0-9]+ Firefox/[.0-9]+$");
+  private static Pattern firefoxOsPattern = Pattern.compile("^Mozilla/[.0-9]+ \\((?:Mobile|Tablet);(?:.*;)? rv:([.0-9]+)\\) Gecko/[.0-9]+ Firefox/[.0-9]+$");
+  private static Pattern blackberryPattern = Pattern.compile("BlackBerry(?:\\d+)/([.0-9]+) ");
 
   public static boolean challenge(final String ua, final Map<String,String> result) {
     
     Map<String,String> data = null;
+    String version = null;
 
     if (ua.indexOf("iPhone") > -1)
       data = DataSet.get("iPhone");
@@ -25,8 +27,13 @@ public class SmartPhone extends AgentCategory {
       data = DataSet.get("Android");
     else if (ua.indexOf("CFNetwork") > -1)
       data = DataSet.get("iOS");
-    else if (ua.indexOf("BlackBerry") > -1)
+    else if (ua.indexOf("BlackBerry") > -1) {
       data = DataSet.get("BlackBerry");
+      Matcher blackberry = blackberryPattern.matcher(ua);
+      if (blackberry.find()) {
+        version = blackberry.group(1);
+      }
+    }
 
     if (result.containsKey(DataSet.DATASET_KEY_NAME) && result.get(DataSet.DATASET_KEY_NAME) == DataSet.get("Firefox").get(DataSet.DATASET_KEY_NAME)) {
       // Firefox OS specific pattern
@@ -35,6 +42,7 @@ public class SmartPhone extends AgentCategory {
       Matcher firefoxOs = firefoxOsPattern.matcher(ua);
       if (firefoxOs.find()) {
         data = DataSet.get("FirefoxOS");
+        version = firefoxOs.group(1);
       }
     }
 
@@ -43,6 +51,9 @@ public class SmartPhone extends AgentCategory {
 
     updateCategory(result, data.get(DataSet.DATASET_KEY_CATEGORY));
     updateOs(result, data.get(DataSet.DATASET_KEY_NAME));
+    if (version != null) {
+      updateOsVersion(result, version);
+    }
     return true;
   }
 }
