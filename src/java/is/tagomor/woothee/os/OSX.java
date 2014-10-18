@@ -11,6 +11,7 @@ import is.tagomor.woothee.Classifier;
 
 public class OSX extends AgentCategory {
   private static Pattern osxVer = Pattern.compile("Mac OS X (10[._]\\d+(?:[._]\\d+)?)(?:\\)|;)");
+  private static Pattern iosVer = Pattern.compile("; CPU(?: iPhone)? OS (\\d+_\\d+(?:_\\d+)?) like Mac OS X");
 
   public static boolean challenge(final String ua, final Map<String,String> result) {
     int pos = ua.indexOf("Mac OS X");
@@ -27,6 +28,10 @@ public class OSX extends AgentCategory {
         data = DataSet.get("iPad");
       else if (ua.indexOf("iPod") > -1)
         data = DataSet.get("iPod");
+      Matcher ios = iosVer.matcher(ua);
+      if (ios.find()) {
+        version = ios.group(1).replace('_', '.');
+      }
     } else {
       Matcher osx = osxVer.matcher(ua);
       if (osx.find(pos)) {
