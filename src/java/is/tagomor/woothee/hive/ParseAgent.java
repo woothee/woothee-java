@@ -9,7 +9,7 @@ import org.apache.hadoop.io.Text;
 import is.tagomor.woothee.Classifier;
 
 @Description(name="pase_agent",
-             value="_FUNC_ returns Map, which has keys such as 'category', 'name', 'os', 'version', 'vendor'.",
+             value="_FUNC_ returns Map, which has keys such as 'category', 'name', 'os', 'version', 'vendor' and 'os_version'.",
              extended="_FUNC_(user_agent_string)")
 public final class ParseAgent extends UDF {
   public Map<String,String> evaluate(final Text s) {
