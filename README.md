@@ -91,9 +91,8 @@ WHERE NOT is_crawler(parsed_agent) AND NOT is_unknown(parsed_agent)
 
 ## Build your own woothee.jar with Hive UDFs
 
-1. Install git, JDK and Ant
-2. Download same version tarballs of Hadoop and Hive, and extract these onto your disk
-3. Do `mvn -P hiveudf` with two `-D` options for `hadoop-version` and `hive-version`
+1. Install git, JDK and Maven
+2. Do `mvn -P hiveudf` with two `-D` options for `hadoop-version` and `hive-version`
  * `mvn package -P hiveudf -Dhadoop-version=0.23.11 -Dhive-version=0.13.0`
 * * * * *
 
