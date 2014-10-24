@@ -329,7 +329,6 @@
                     <groupId>org.apache.hadoop</groupId>
                     <artifactId>hadoop-common</artifactId>
                     <version>${hadoop-version}</version>
-                    <optional>true</optional>
                     <exclusions>
                         <exclusion>
                             <groupId>org.apache.hadoop</groupId>
