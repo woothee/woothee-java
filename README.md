@@ -31,6 +31,9 @@ r.get("os")
 
 r.get("version");
 // => version of browser, or terminal type name of mobile phones
+
+r.get("os_version")
+// => version of operating systems (for some typical cases)
 ```
 
 Parse user-agent string and returns a Map object with keys `name`, `category`, `os`, `version` and `vendor`.
@@ -48,6 +51,8 @@ For unknown user-agent (or partially failed to parse), result objects may have v
  * This field used to indicate cellar phone carrier for category 'mobilephone'
 * `vendor`
  * optional field, shows browser vendor
+* `os_version`
+ * optional field, shows version of operating systems
 
 ### Finding crawlers (almost all, not all) in fast
 
