@@ -4,12 +4,6 @@ The Java implementation of Project Woothee, which is multi-language user-agent s
 
 https://github.com/woothee/woothee
 
-## Installation
-
-Download 'release/woothee.jar' and put it into CLASSPATH directory.
-
-**NOTICE** Pre-built jar doesn't include Hive UDFs. Build your own jar file if you want these. (See 'Build your own woothee.jar'.)
-
 ## Usage
 
 ### Parsing user-agent
@@ -99,11 +93,8 @@ WHERE NOT is_crawler(parsed_agent) AND NOT is_unknown(parsed_agent)
 
 1. Install git, JDK and Ant
 2. Download same version tarballs of Hadoop and Hive, and extract these onto your disk
-3. Do `ant hiveudf` with two `-D` options for `hadoop_path` and `hive_path`
- * `ant -Dhadoop_path=/home/myname/tmp/hadoop-myversion -Dhive_path=/home/myname/tmp/hive-myversion hiveudf`
-4. Do `ant jar` to archive into jarfile
- * `ant jar`
-
+3. Do `mvn -P hiveudf` with two `-D` options for `hadoop-version` and `hive-version`
+ * `mvn package -P hiveudf -Dhadoop-version=0.23.11 -Dhive-version=0.13.0`
 * * * * *
 
 ## Authors

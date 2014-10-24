@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import org.ho.yaml.Yaml;
 
 public final class DataSetGenerator {
-  private static String TARGET_PATH = "src/java/is/tagomor/woothee/DataSet.java";
+  private static String TARGET_PATH = "src/main/java/is/tagomor/woothee/DataSet.java";
 
   // current dir is "woothee-java", maybe
-  private static File CODE_HEADER = new File(new File(".").getAbsolutePath().concat("/misc/header_dataset.java"));
-  private static File CODE_FOOTER = new File(new File(".").getAbsolutePath().concat("/misc/footer_dataset.java"));
+  private static File CODE_HEADER = new File(new File(".").getAbsolutePath().concat("/src/misc/header_dataset.java"));
+  private static File CODE_FOOTER = new File(new File(".").getAbsolutePath().concat("/src/misc/footer_dataset.java"));
   private static File SOURCE_FILE = new File(new File(".").getAbsolutePath().concat("/woothee/dataset.yaml"));
 
   /*
