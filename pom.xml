@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>am.ik.woothee</groupId>
+    <groupId>is.tagomor.woothee</groupId>
     <artifactId>woothee-java</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>woothee-java</name>
 
     <licenses>
@@ -17,11 +17,11 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/making/woothee-java</url>
-        <connection>scm:git:git@github.com:making/woothee-java.git</connection>
-        <developerConnection>scm:git:git@github.com:making/woothee-java.git</developerConnection>
+        <url>https://github.com/woothee/woothee-java</url>
+        <connection>scm:git:git@github.com:woothee/woothee-java.git</connection>
+        <developerConnection>scm:git:git@github.com:woothee/woothee-java.git</developerConnection>
     </scm>
-    <url>https://github.com/making/woothee-java</url>
+    <url>https://github.com/woothee/woothee-java</url>
     <description>Woothee Java implementation and Hive UDF</description>
 
     <developers>
