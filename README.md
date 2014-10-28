@@ -89,11 +89,49 @@ FROM (
 WHERE NOT is_crawler(parsed_agent) AND NOT is_unknown(parsed_agent)
 ```
 
+## Build and test this project
+
+Setup maven, and execute: `mvn test`
+
+If JavaDoc generations puts some warnings for hive udf, specify `mvn install -DskipTests=true -Dmaven.javadoc.skip=true`.
+
+### Release jar into maven central
+
+At first, setup GnuPG and generate your own key.
+
+And setup `settings.xml` (maybe `~/.m2/settings.xml`) like this:
+```xml
+<settings>
+  <servers>
+    <server>
+      <id>ossrh</id>
+      <username>YOUR_JIRA_USERNAME</username>
+      <password>YOUR_JIRA_PASSWORD</password>
+    </server>
+  </servers>
+  <profiles>
+    <profile>
+      <id>ossrh</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <gpg.executable>gpg2</gpg.executable>
+        <gpg.passphrase>GPG_KEY_PASSPHRASE</gpg.passphrase>
+      </properties>
+    </profile>
+  </profiles>
+</settings>
+```
+
+And run deployment: `mvn clean deploy -DperformRelease=true`
+
 ## Build your own woothee.jar with Hive UDFs
 
 1. Install git, JDK and Maven
 2. Do `mvn -P hiveudf` with two `-D` options for `hadoop-version` and `hive-version`
  * `mvn package -P hiveudf -Dhadoop-version=0.23.11 -Dhive-version=0.13.0`
+
 * * * * *
 
 ## Authors
