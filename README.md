@@ -58,6 +58,8 @@ Try to see useragent's category is 'crawler' or not, by casual(fast) method. Min
 
 ### Parsing user-agent in Hive queries
 
+NOTE: **Released jar in Maven Central DOESN'T include UDF classes**. See [here](https://github.com/woothee/woothee-java#build-your-own-wootheejar-with-hive-udfs).
+
 ```sql
 -- add woothee.jar to classpath
 add jar woothee.jar;
