@@ -10,7 +10,8 @@ import is.tagomor.woothee.DataSet;
 
 public class MSIE extends AgentCategory {
   private static Pattern msie = Pattern.compile("MSIE ([.0-9]+);");
-  private static Pattern trident = Pattern.compile("Trident/([.0-9]+);(?: BOIE[0-9]+;[A-Z]+;)? rv:([.0-9]+)");
+  private static Pattern trident = Pattern.compile("Trident/([.0-9]+);");
+  private static Pattern tridentVersion = Pattern.compile(" rv:([.0-9]+)");
   private static Pattern iemobile = Pattern.compile("IEMobile/([.0-9]+);");
 
   public static boolean challenge(final String ua, final Map<String,String> result) {
@@ -27,8 +28,9 @@ public class MSIE extends AgentCategory {
 
       if (!matched) {
         Matcher tri = trident.matcher(ua);
-        if (tri.find()) {
-          version = tri.group(2);
+        Matcher triVer = tridentVersion.matcher(ua);
+        if (tri.find() && triVer.find()) {
+          version = triVer.group(1);
           matched = true;
         }
       }
