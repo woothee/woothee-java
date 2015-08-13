@@ -41,7 +41,9 @@ public class Windows extends AgentCategory {
     }
 
     String versionString = win.group(1);
-    if (versionString.equals("NT 6.3"))
+    if (versionString.equals("NT 10.0"))
+      data = DataSet.get("Win10");
+    else if (versionString.equals("NT 6.3"))
       data = DataSet.get("Win8.1");
     else if (versionString.equals("NT 6.2"))
       data = DataSet.get("Win8");
