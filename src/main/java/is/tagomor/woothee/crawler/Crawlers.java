@@ -63,6 +63,10 @@ public class Crawlers extends AgentCategory {
       updateMap(result, DataSet.get("facebook"));
       return true;
     }
+    else if (ua.indexOf("Twitterbot/") > -1) {
+      updateMap(result, DataSet.get("twitter"));
+      return true;
+    }
     else if (ua.indexOf("ichiro") > -1) {
       if (ua.indexOf("http://help.goo.ne.jp/door/crawler.html") > -1 || ua.indexOf("compatible; ichiro/mobile goo;") > -1) {
         updateMap(result, DataSet.get("goo"));
