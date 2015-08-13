@@ -81,6 +81,8 @@ public final class Classifier {
       return true;
     if (is.tagomor.woothee.browser.Opera.challenge(useragent, result))
       return true;
+    if (is.tagomor.woothee.browser.Webview.challenge(useragent, result))
+      return true;
 
     return false;
   }
