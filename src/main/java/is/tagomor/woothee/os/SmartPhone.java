@@ -10,6 +10,7 @@ import is.tagomor.woothee.DataSet;
 
 public class SmartPhone extends AgentCategory {
   private static Pattern firefoxOsPattern = Pattern.compile("^Mozilla/[.0-9]+ \\((?:Mobile|Tablet);(?:.*;)? rv:([.0-9]+)\\) Gecko/[.0-9]+ Firefox/[.0-9]+$");
+  private static Pattern blackberry10Pattern = Pattern.compile("BB10(?:.+)Version/([.0-9]+)");
   private static Pattern blackberryPattern = Pattern.compile("BlackBerry(?:\\d+)/([.0-9]+) ");
 
   public static boolean challenge(final String ua, final Map<String,String> result) {
@@ -27,6 +28,13 @@ public class SmartPhone extends AgentCategory {
       data = DataSet.get("Android");
     else if (ua.indexOf("CFNetwork") > -1)
       data = DataSet.get("iOS");
+    else if (ua.indexOf("BB10") > -1) {
+      data = DataSet.get("BlackBerry10");
+      Matcher bb10 = blackberry10Pattern.matcher(ua);
+      if (bb10.find()) {
+        version = bb10.group(1);
+      }
+    }
     else if (ua.indexOf("BlackBerry") > -1) {
       data = DataSet.get("BlackBerry");
       Matcher blackberry = blackberryPattern.matcher(ua);
