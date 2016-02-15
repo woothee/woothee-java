@@ -7,7 +7,7 @@ import java.util.List;
 import is.tagomor.woothee.DataSet;
 
 public final class Classifier {
-  public static String VERSION = "1.0.0";
+  public static String VERSION = "1.3.1";
 
   public static Map<String,String> parse(final String useragent) {
     return fillResult(execParse(useragent));
