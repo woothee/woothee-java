@@ -75,6 +75,8 @@ public final class Classifier {
   public static boolean tryBrowser(final String useragent, final Map<String,String> result) {
     if (is.tagomor.woothee.browser.MSIE.challenge(useragent, result))
       return true;
+    if (is.tagomor.woothee.browser.Vivaldi.challenge(useragent, result))
+      return true;
     if (is.tagomor.woothee.browser.SafariChrome.challenge(useragent, result))
       return true;
     if (is.tagomor.woothee.browser.Firefox.challenge(useragent, result))
