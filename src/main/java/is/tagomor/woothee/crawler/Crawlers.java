@@ -43,6 +43,10 @@ public class Crawlers extends AgentCategory {
         return true;
       }
     }
+    else if (ua.indexOf("BingPreview") > -1) {
+      updateMap(result, DataSet.get("BingPreview"));
+      return true;
+    }
     else if (ua.indexOf("Baidu") > -1) {
       if (ua.indexOf("compatible; Baiduspider") > -1 || ua.indexOf("Baiduspider+") > -1 || ua.indexOf("Baiduspider-image+") > -1) {
         updateMap(result, DataSet.get("Baiduspider"));
