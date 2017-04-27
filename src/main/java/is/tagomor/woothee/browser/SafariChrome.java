@@ -20,6 +20,9 @@ public class SafariChrome extends AgentCategory {
     if (pos < 0) // not Safari nor Chrome
       return false;
 
+    if (ua.indexOf("Chrome") > -1 && ua.indexOf("wv") > -1) // Chrome but Android Webview
+      return false;
+
     String version = DataSet.VALUE_UNKNOWN;
 
     int epos = ua.indexOf("Edge");
