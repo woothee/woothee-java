@@ -62,6 +62,10 @@ public class HTTPLibrary extends AgentCategory {
       data = DataSet.get("HTTPLibrary");
       version = "php";
     }
+    else if (ua.startsWith("curl/")) {
+      data = DataSet.get("HTTPLibrary");
+      version = "curl";
+    }
 
     if (data == null)
       return false;
