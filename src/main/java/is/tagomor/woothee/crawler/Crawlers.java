@@ -126,8 +126,8 @@ public class Crawlers extends AgentCategory {
       }
     }
     else if (ua.indexOf("trendictionbot") > -1) {
-        updateMap(result, DataSet.get("trendiction"));
-        return true;
+      updateMap(result, DataSet.get("trendictionbot"));
+      return true;
     }
 
     return false;
