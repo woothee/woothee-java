@@ -54,7 +54,7 @@ public class Crawlers extends AgentCategory {
       }
     }
     else if (ua.indexOf("Yeti") > -1) {
-      if (ua.indexOf("http://help.naver.com/robots") > -1) {
+      if (ua.indexOf("http://help.naver.com/robots") > -1 || ua.indexOf("http://help.naver.com/support/robots.html") > -1 || ua.indexOf("http://naver.me/bot") > -1) {
         updateMap(result, DataSet.get("Yeti"));
         return true;
       }
