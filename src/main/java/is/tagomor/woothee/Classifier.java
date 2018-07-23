@@ -77,6 +77,8 @@ public final class Classifier {
       return true;
     if (is.tagomor.woothee.browser.Vivaldi.challenge(useragent, result))
       return true;
+    if (is.tagomor.woothee.browser.YandexBrowser.challenge(useragent, result))
+      return true;
     if (is.tagomor.woothee.browser.SafariChrome.challenge(useragent, result))
       return true;
     if (is.tagomor.woothee.browser.Firefox.challenge(useragent, result))
