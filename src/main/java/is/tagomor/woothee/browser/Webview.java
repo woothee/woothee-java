@@ -9,7 +9,7 @@ import is.tagomor.woothee.AgentCategory;
 import is.tagomor.woothee.DataSet;
 
 public class Webview extends AgentCategory {
-  private static Pattern osxLikeRegex = Pattern.compile("iP(?:hone;|ad;|od) .*like Mac OS X");
+  private static Pattern osxLikeRegex = Pattern.compile("iP(?:hone;|ad;|od) .*[l|L]ike Mac OS X");
   private static Pattern osVersion = Pattern.compile("Version/([.0-9]+)");
 
   public static boolean challenge(final String ua, final Map<String,String> result) {
@@ -27,7 +27,7 @@ public class Webview extends AgentCategory {
     }
 
     // iOS
-    int pos = ua.indexOf("like Mac OS X");
+    int pos = ua.indexOf("ike Mac OS X");
     if (pos < 0)
       return false;
 
