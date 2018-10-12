@@ -18,11 +18,11 @@ public class SmartPhone extends AgentCategory {
     Map<String,String> data = null;
     String version = null;
 
-    if (ua.indexOf("iPhone") > -1)
+    if (ua.indexOf("iPhone") > -1 || ua.indexOf("IPhone") > -1)
       data = DataSet.get("iPhone");
-    else if (ua.indexOf("iPad") > -1)
+    else if (ua.indexOf("iPad") > -1 || ua.indexOf("IPad") > -1)
       data = DataSet.get("iPad");
-    else if (ua.indexOf("iPod") > -1)
+    else if (ua.indexOf("iPod") > -1 || ua.indexOf("IPod") > -1)
       data = DataSet.get("iPod");
     else if (ua.indexOf("Android") > -1)
       data = DataSet.get("Android");
