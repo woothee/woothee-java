@@ -6,7 +6,7 @@
 
     <groupId>is.tagomor.woothee</groupId>
     <artifactId>woothee-java</artifactId>
-    <version>1.9.0</version>
+    <version>1.9.1</version>
     <name>woothee-java</name>
 
     <licenses>
