@@ -126,7 +126,9 @@ And setup `settings.xml` (maybe `~/.m2/settings.xml`) like this:
 </settings>
 ```
 
-And run deployment: `mvn clean deploy -DperformRelease=true`
+And
+* run deployment: `mvn clean deploy -DperformRelease=true`
+* then go to `https://oss.sonatype.org/` to release it immediately (or check the state of automatic release)
 
 ## Build your own woothee.jar with Hive UDFs
 
