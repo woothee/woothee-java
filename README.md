@@ -130,6 +130,8 @@ And
 * run deployment: `mvn clean deploy -DperformRelease=true`
 * then go to `https://oss.sonatype.org/` to release it immediately (or check the state of automatic release)
 
+And note: **Update the version number String in `Classifier.java`**
+
 ## Build your own woothee.jar with Hive UDFs
 
 1. Install git, JDK and Maven
