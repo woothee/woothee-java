@@ -9,7 +9,7 @@ import is.tagomor.woothee.AgentCategory;
 import is.tagomor.woothee.DataSet;
 
 public class SafariChrome extends AgentCategory {
-  private static Pattern edgeVerRegex = Pattern.compile("Edge/([.0-9]+)");
+  private static Pattern edgeVerRegex = Pattern.compile("(?:Edge|Edg|EdgiOS|EdgA)/([.0-9]+)");
   private static Pattern firefoxiOSPattern = Pattern.compile("FxiOS/([.0-9]+)");
   private static Pattern chromeVerRegex = Pattern.compile("(?:Chrome|CrMo|CriOS)/([.0-9]+)");
   private static Pattern operaVerRegex = Pattern.compile("OPR/([.0-9]+)");
@@ -25,7 +25,7 @@ public class SafariChrome extends AgentCategory {
 
     String version = DataSet.VALUE_UNKNOWN;
 
-    int epos = ua.indexOf("Edge");
+    int epos = ua.indexOf("Edg");
     if (epos > -1) {
       Matcher edge = edgeVerRegex.matcher(ua);
       if (edge.find(epos)) {
