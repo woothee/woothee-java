@@ -13,6 +13,7 @@ public class SafariChrome extends AgentCategory {
   private static Pattern firefoxiOSPattern = Pattern.compile("FxiOS/([.0-9]+)");
   private static Pattern chromeVerRegex = Pattern.compile("(?:Chrome|CrMo|CriOS)/([.0-9]+)");
   private static Pattern operaVerRegex = Pattern.compile("OPR/([.0-9]+)");
+  private static Pattern gsaVerRegex = Pattern.compile("GSA/([.0-9]+)");
   private static Pattern safariVerRegex = Pattern.compile("Version/([.0-9]+)");
 
   public static boolean challenge(final String ua, final Map<String,String> result) {
@@ -71,6 +72,17 @@ public class SafariChrome extends AgentCategory {
       updateMap(result, DataSet.get("Chrome"));
       updateVersion(result, version);
       return true;
+    }
+
+    int gsaPos = ua.indexOf("GSA");
+    if (gsaPos > -1) {
+      Matcher gsa = gsaVerRegex.matcher(ua);
+      if (gsa.find(gsaPos)) {
+        version = gsa.group(1);
+        updateMap(result, DataSet.get("GSA"));
+        updateVersion(result, version);
+        return true;
+      }
     }
 
     // Safari (PC/Mobile)
