@@ -22,5 +22,5 @@ jobs:
           distribution: temurin
           java-version: ${{ matrix.java }}
           cache: maven
-      - run: git submodule --init
+      - run: git submodule update --init
       - run: mvn test
