@@ -10,14 +10,14 @@ on:
       - 'release-*'
 
 jobs:
-  mri:
+  test:
     strategy:
       matrix:
         java: ['8', '11', '16']
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ruby/setup-java@v2
+      - uses: actions/setup-java@v2
         with:
           distribution: temurin
           java-version: ${{ matrix.java }}
